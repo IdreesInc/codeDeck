@@ -2,31 +2,18 @@
 <html>
 <head>
  <title>Weather</title>
+ <link href="../card.css" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
  <style>
-   body {
-    background-color: #F5F5F5;
-  }
-  #card {
-    position: absolute;
-    width: 320px;
-    height: 480px;
-    top: 50%;
-    left: 50%;
-    margin: -240px 0 0 -160px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 30px lightgrey;
-    background: white;
-  }
   .text {
     font-family: 'Raleway', sans-serif;
-    color: #FF5F6D;
     text-align: center;
   }
   #location {
     font-size: 15pt;
     position: relative;
     margin-top: 35px;
+    color: #FF5F6D;
   }
   #circle {
     width: 200px;
@@ -47,27 +34,29 @@
     letter-spacing: -20px;
     margin-left: -15px;
   }
+  #status {
+    font-size: 30pt;
+    position: relative;
+    margin-top: 0px;
+    color: #FF5F6D;
+  }
   #summary {
     font-size: 15pt;
     position: relative;
-    margin-top: 30px;
-  }
-  #status {
-    font-size: 20pt;
-    position: relative;
-    margin-top: 10px;
+    margin-top: 20px;
+    color: #FF5F6D;
   }
 </style>
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 </head>
 <body>
   <div id="card">
     <div id="location" class="text">Chapel Hill, North Carolina</div>
     <div id="circle"></div>
     <div id="temperature" class="text">27</div>
-    <div id="status" class="text">Clear</div>
-    <div id="summary" class="text">Rain and stuff</div>
+    <div id="status" class="text">Sunny AF</div>
+    <div id="summary" class="text">Expect backsweat.</div>
   </div>
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
   <script src="./weather.js"></script>
 </body>
 </html>
