@@ -39,14 +39,15 @@ function draw() {
 	}
 	ctx.font = "75px calibri";
 	ctx.fillStyle = 'RGBA(255, 181, 107, 1.00)';
-	ctx.textAlign = "left";
+	ctx.textAlign = "right";
 	var hours = d.getHours();
 	if (hours > 12) {
 		hours -= 12;
+		hours = "0" + hours;
 	} else if (hours === 0) {
 		hours = 12;
 	}
-	ctx.fillText(hours, 20, textY - 5);
+	ctx.fillText(hours, 90, textY - 5);
 
 	ctx.beginPath();
 	ctx.arc(circleLoc.x, circleLoc.y, 90, Math.PI * 1.5, Math.PI * (2 + 1.5));
