@@ -24,4 +24,5 @@
 }
 #canvas {
   position: absolute;
+  pointer-events: none;
 }

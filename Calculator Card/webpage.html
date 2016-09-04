@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator Card</title>
+	<link href="../card.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+	<script src="../card.js"></script>
+	<script src="./lib/parser.js"></script>
+	<style>
+		.textbox {
+			width: 310px;
+			display: block;
+			resize: none;
+			border-style: none;
+			border-color: Transparent;
+			overflow: auto;
+			text-align: right;
+			font-family: 'Dosis', sans-serif;
+			white-space: nowrap;
+			outline: none;
+		}
+		#calculation {
+			height: 25px;
+			color: grey;
+			font-size: 25px;
+		}
+		#result {
+			height: 67px;
+			color: rgba(86, 86, 86, 0.90);
+			font-size: 60px;
+		}
+		#buttons {
+			position: relative;
+			z-index: 1;
+			width: 320px;
+			height: 300px;
+			/*			background: linear-gradient(to top left, rgba(49, 50, 63, 0.95), rgba(49, 50, 63, 0.75));*/
+			background: linear-gradient(to top left, rgba(255, 20, 69, 0.9490196078431372), rgba(255, 54, 85, 0.7490196078431373));
+			box-shadow: 0px 20px 20px rgba(255, 54, 85, 0.15);
+			font-size: 30px;
+			word-spacing: 30px;
+			color: rgba(255, 255, 255, 0.75);
+		}
+		.text {
+			font-family: 'Dosis', sans-serif;
+			text-align: center;
+		}
+		#submit {
+			width: 100%;
+			height: 80px;
+			background: linear-gradient(to top left, rgba(49, 50, 63, 0.95), rgba(49, 50, 63, 0.75));
+			font-size: 40px;
+			line-height: 70px;
+			vertical-align: middle;
+			color: white;
+		}
+		table {
+			width: 100%;
+			margin: 0 auto;
+		}
+		td {
+			padding-top: 15px;
+			width: 25%;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div id="card">
+		<textarea class="textbox" id="calculation">10 + 11</textarea>
+		<textarea class="textbox" id="result">21</textarea>
+		<div class="text" id="buttons">
+			<table id="table">
+				<tr>
+					<td id="clear">C</td>
+					<td id="decimal"><font size="100" style="line-height: 3px; height: 3px;">.</font></td>
+					<td id="exponent">Exp</td>
+					<td id="root">&#8730;</td>
+				</tr>
+				<tr>
+					<td id="7">7</td>
+					<td id="8">8</td>
+					<td id="9">9</td>
+					<td id="multiply">&#10005;</td>
+				</tr>
+				<tr>
+					<td id="4">4</td>
+					<td id="5">5</td>
+					<td id="6">6</td>
+					<td id="divide">/</td>
+				</tr>
+				<tr>
+					<td id="1">1</td>
+					<td id="2">2</td>
+					<td id="3">3</td>
+					<td id="add"><font size="100" style="line-height: 3px; height: 3px;">+</font></td>
+				</tr>
+				<tr>
+					<td id="0">0</td>
+					<td id="openParenthesis">(</td>
+					<td id="closeParenthesis">)</td>
+					<td id="subtract"><font size="100" style="line-height: 3px; height: 3px;">-</font></td>
+				</tr>
+			</table>
+		</div>
+		<div class="text" id="submit">=</div>
+	</div>
+	<script src="./calculator.js"></script>
+</body>
+</html>
