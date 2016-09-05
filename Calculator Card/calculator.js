@@ -44,11 +44,6 @@ function initialize() {
 	$("#submit").click(function(event) {
 		$("#result").val((Parser.parse($('#calculation').val().replaceAll(" ", "")).evaluate()));
 	});
-	$('input').on("keypress", function(e) {
-		/* ENTER PRESSED*/
-		if (e.keyCode == 13) {
-		}
-	}
 }
 document.onLoad = initialize();
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>codeDeck</title>
+	<link href="card.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<style>
+		body {
+			width: 3000px;
+		}
+
+		.card {
+			margin-left: 120px;
+			margin-top: 70px;
+			box-shadow: 0px 50px 50px rgba(0,0,0,0.35);
+		}
+	</style>
+</head>
+<body>
+</body>
+<script>
+	var deck = ["Calculator", "Time", "Weather"];
+	for (var i = 0; i < deck.length; i++) {
+		$("body").append('<iframe class="card" style="margin-top: ' + ($(document).height() / 2 - 240) + 'px" src="' + deck[i] + ' Card/webpage.html" width="320px" height="480px" frameBorder="0"></iframe>');
+	}
+	$('body').css('width', deck.length * (320 + 120) + 120 + 'px');
+</script>
+</html>
