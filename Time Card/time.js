@@ -43,9 +43,11 @@ function draw() {
 	var hours = d.getHours();
 	if (hours > 12) {
 		hours -= 12;
-		hours = "0" + hours;
 	} else if (hours === 0) {
 		hours = 12;
+	}
+	if (hours < 10) {
+		hours = "0" + hours;
 	}
 	ctx.fillText(hours, 90, textY - 5);
 

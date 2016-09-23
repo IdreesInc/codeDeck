@@ -7,22 +7,52 @@
 	<style>
 		body {
 			width: 3000px;
+			overflow-y: hidden;
 		}
 
 		.card {
-			margin-left: 120px;
-			margin-top: 70px;
 			box-shadow: 0px 50px 50px rgba(0,0,0,0.35);
+		}
+
+		#status {
+			position: fixed;
 		}
 	</style>
 </head>
 <body>
+	<div id="status"></div>
 </body>
 <script>
 	var deck = ["Calculator", "Time", "Weather"];
+	var backgrounds = ["blue", "red", "green"];
+	var marginLeft = 240;
+	var endMargin = ($(window).width() / 2 - 160);
 	for (var i = 0; i < deck.length; i++) {
-		$("body").append('<iframe class="card" style="margin-top: ' + ($(document).height() / 2 - 240) + 'px" src="' + deck[i] + ' Card/webpage.html" width="320px" height="480px" frameBorder="0"></iframe>');
+		var margin = marginLeft;
+		if (i === 0) {
+			margin = endMargin;
+		}
+		$("body").append('<iframe class="card" style=" margin-top: ' + ($(window).height() / 2 - 240) + 'px; margin-left: ' + margin + 'px" src="' + deck[i] + ' Card/webpage.html" width="320px" height="480px" frameBorder="0"></iframe>');
 	}
-	$('body').css('width', deck.length * (320 + 120) + 120 + 'px');
+	$('body').css('width', endMargin * 2 + deck.length * (320 + marginLeft) - marginLeft + 'px');
+
+	var cardPositions = [endMargin];
+	for (var j = 1; j < deck.length; j++) {
+		cardPositions[j] += marginLeft + 320;
+	}
+	$(window).scroll(function() {
+		var scroll = $(document).scrollLeft() + $(window).width() / 2;
+		var color = "white";
+		for (var i = deck.length - 1; i >= 0; i--) {
+			var x = endMargin + i * (marginLeft + 320);
+			if (scroll >= x) {
+				if(scroll <= x + 320) {
+					color = backgrounds[i];
+					break;
+				}
+			}
+		}
+		$("body").css('background', color);
+	});
 </script>
 </html>

@@ -38,14 +38,24 @@ function initialize() {
 				break;
 			}
 		}
-		$('#calculation').val( $('#calculation').val() + " " + calculation);
+		$('#calculation').val( $('#calculation').val() + calculation);
+		$('#calculation').keypress(function(event) {
+			if (event.keyCode == 13) {
+				submit();
+				return false;
+			}
+		});
 		$("#result").val("");
 	});
 	$("#submit").click(function(event) {
-		$("#result").val((Parser.parse($('#calculation').val().replaceAll(" ", "")).evaluate()));
+		submit();
 	});
 }
 document.onLoad = initialize();
+
+function submit() {
+	$("#result").val((Parser.parse($('#calculation').val().replaceAll(" ", "")).evaluate()));
+}
 
 String.prototype.replaceAll = function(search, replacement) {
 	var target = this;
