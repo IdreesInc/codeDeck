@@ -17,24 +17,57 @@
 		#status {
 			position: fixed;
 		}
+
+		#backgroundOne {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		#backgroundTwo {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
 	</style>
 </head>
 <body>
-	<div id="status"></div>
+	<div id="backgroundTwo"></div>
+	<div id="backgroundOne"></div>
 </body>
 <script>
-	var deck = ["Calculator", "Time", "Weather"];
-	var backgrounds = ["blue", "red", "green"];
-	var marginLeft = 240;
+	var weatherCard = {
+		name: "Weather",
+		startColor: "#FFB56B",
+		endColor: "#C9364C"
+	};
+	var calculatorCard = {
+		name: "Calculator",
+		startColor: "white",
+		endColor: "#555067"
+	};
+	var timeCard = {
+		name: "Time",
+		startColor: "#FFCE52",
+		endColor: "#FF976D"
+	};
+	var deck = [weatherCard, calculatorCard, timeCard];
+	function getGradient(index) {
+		return "linear-gradient(to bottom right, " + deck[index].startColor + ", " + deck[index].endColor + ")";
+	}
+	var marginLeft = 300;
 	var endMargin = ($(window).width() / 2 - 160);
 	for (var i = 0; i < deck.length; i++) {
 		var margin = marginLeft;
 		if (i === 0) {
 			margin = endMargin;
 		}
-		$("body").append('<iframe class="card" style=" margin-top: ' + ($(window).height() / 2 - 240) + 'px; margin-left: ' + margin + 'px" src="' + deck[i] + ' Card/webpage.html" width="320px" height="480px" frameBorder="0"></iframe>');
+		$("body").append('<iframe class="card" style=" margin-top: ' + ($(window).height() / 2 - 240) + 'px; margin-left: ' + margin + 'px" src="' + deck[i].name + ' Card/webpage.html" width="320px" height="480px" frameBorder="0"></iframe>');
 	}
 	$('body').css('width', endMargin * 2 + deck.length * (320 + marginLeft) - marginLeft + 'px');
+	$("#backgroundOne").css('background', getGradient(0));
 
 	var cardPositions = [endMargin];
 	for (var j = 1; j < deck.length; j++) {
@@ -42,17 +75,24 @@
 	}
 	$(window).scroll(function() {
 		var scroll = $(document).scrollLeft() + $(window).width() / 2;
-		var color = "white";
 		for (var i = deck.length - 1; i >= 0; i--) {
 			var x = endMargin + i * (marginLeft + 320);
 			if (scroll >= x) {
 				if(scroll <= x + 320) {
-					color = backgrounds[i];
+					$("#backgroundOne").css('background', getGradient(i));
+					$("#backgroundOne").css('opacity', 1);
+					$("#backgroundTwo").css('opacity', 0);
+					break;
+				} else {
+					var interp = (scroll - x - 320) / marginLeft;
+					$("#backgroundOne").css('background', getGradient(i));
+					$("#backgroundOne").css('opacity', 1 - interp);
+					$("#backgroundTwo").css('background', getGradient(i + 1));
+					$("#backgroundTwo").css('opacity', interp);
 					break;
 				}
 			}
 		}
-		$("body").css('background', color);
 	});
 </script>
 </html>
