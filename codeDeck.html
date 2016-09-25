@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>codeDeck</title>
+	<title>_codeDeck</title>
 	<link href="card.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
 	<style>
@@ -38,9 +38,14 @@
 	<div id="backgroundOne"></div>
 </body>
 <script>
+	var titleCard = {
+		name: "Title",
+		startColor: "#36B4C1",
+		endColor: "#008FEC"
+	};
 	var weatherCard = {
 		name: "Weather",
-		startColor: "#FFB56B",
+		startColor: "#FFCE52",
 		endColor: "#C9364C"
 	};
 	var calculatorCard = {
@@ -53,7 +58,7 @@
 		startColor: "#FFCE52",
 		endColor: "#FF976D"
 	};
-	var deck = [weatherCard, calculatorCard, timeCard];
+	var deck = [titleCard, weatherCard, calculatorCard, timeCard];
 	function getGradient(index) {
 		return "linear-gradient(to bottom right, " + deck[index].startColor + ", " + deck[index].endColor + ")";
 	}
