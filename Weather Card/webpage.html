@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Weather Card</title>
- <link href="../card.css" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
- <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
- <script src="../card.js"></script>
- <style>
-   #card {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-  }
-  .text {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-  }
-  #location {
-    font-size: 15pt;
-    position: relative;
-    margin-top: 35px;
-    color: #FF5F6D;
-  }
-  #circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    /* background: #00688B; */
-    background: linear-gradient(to top, #FF5F6D, #FFC371);
-    margin-left: 60px;
-    margin-top: 20px;
-    border-color: blue;
-    border-width: 20px;
-  }
-  #temperature {
-    font-size: 175pt;
-    position: relative;
-    color: white;
-    margin-top: -250px;
-    letter-spacing: -20px;
-    margin-left: -15px;
-  }
-  #status {
-    font-size: 30pt;
-    position: relative;
-    margin-top: 0px;
-    color: #FF5F6D;
-  }
-  #summary {
-    font-size: 15pt;
-    position: relative;
-    margin-top: 20px;
-    color: #FF5F6D;
-  }
-</style>
+	<title>Weather Card</title>
+	<link href="../card.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="../card.js"></script>
+	<style>
+		#card {
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+		}
+		.text {
+			font-family: 'Raleway', sans-serif;
+			text-align: center;
+		}
+		#location {
+			font-size: 15pt;
+			position: relative;
+			margin-top: 35px;
+			color: #FF5F6D;
+		}
+		#circle {
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			/* background: #00688B; */
+			background: linear-gradient(to top, #FF5F6D, #FFC371);
+			margin-left: 60px;
+			margin-top: 20px;
+			border-color: blue;
+			border-width: 20px;
+		}
+		#temperature {
+			font-size: 175pt;
+			position: relative;
+			color: white;
+			margin-top: -250px;
+			letter-spacing: -20px;
+			margin-left: -15px;
+		}
+		#status {
+			font-size: 30pt;
+			position: relative;
+			margin-top: 0px;
+			color: #FF5F6D;
+		}
+		#summary {
+			font-size: 15pt;
+			position: relative;
+			margin-top: 20px;
+			color: #FF5F6D;
+		}
+	</style>
 </head>
 <body>
-  <div id="card">
-    <div id="location" class="text">Chapel Hill, North Carolina</div>
-    <div id="circle"></div>
-    <div id="temperature" class="text">27</div>
-    <div id="status" class="text">Sunny AF</div>
-    <div id="summary" class="text">Expect backsweat.</div>
-  </div>
-  <script src="./weather.js"></script>
+	<div id="card">
+		<div id="location" class="text">Chapel Hill, North Carolina</div>
+		<div id="circle"></div>
+		<div id="temperature" class="text">27</div>
+		<div id="status" class="text">Sunny AF</div>
+		<div id="summary" class="text">Expect backsweat.</div>
+	</div>
+	<script src="./weather.js"></script>
 </body>
 </html>
