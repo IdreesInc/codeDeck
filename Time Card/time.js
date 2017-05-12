@@ -54,7 +54,7 @@ function draw() {
 	ctx.beginPath();
 	ctx.arc(circleLoc.x, circleLoc.y, 90, Math.PI * 1.5, Math.PI * (2 + 1.5));
 	ctx.strokeStyle = "rgba(255,180,122, 0.2)";
-	ctx.lineWidth = 15;
+	ctx.lineWidth = 14;
 	ctx.lineCap = "round";
 	ctx.stroke();
 
@@ -64,7 +64,7 @@ function draw() {
 	gradient.addColorStop("0", "#FF976D");
 	gradient.addColorStop("1", "#FFCE52");
 	ctx.strokeStyle = gradient;
-	ctx.lineWidth = 15;
+	ctx.lineWidth = 14;
 	ctx.lineCap = "round";
 	ctx.stroke();
 }
