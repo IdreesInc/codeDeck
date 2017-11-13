@@ -2,10 +2,10 @@ var canvas;
 var ctx;
 var seconds = 0;
 
-$(document).ready(function() {
+$(document).ready(function () {
 	canvas = document.getElementById("canvas");
 	ctx = canvas.getContext("2d");
-	var loop = function(){
+	var loop = function () {
 		update();
 		draw();
 	};
@@ -19,11 +19,11 @@ function update() {
 }
 
 function draw() {
-	var circleLoc = {x: canvas.width / 1.6, y: canvas.height / 2};
+	var circleLoc = { x: canvas.width / 1.6, y: canvas.height / 2 };
 	var textY = circleLoc.y + 30;
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	var d = new Date();
-	ctx.font = "100px calibri";
+	ctx.font = "100px Raleway";
 	ctx.textAlign = "center";
 	for (var i = -3; i <= 3; i++) {
 		if (d.getMinutes() - i > -1) {
@@ -37,7 +37,7 @@ function draw() {
 			ctx.fillText(minutes, circleLoc.x, textY + trans);
 		}
 	}
-	ctx.font = "75px calibri";
+	ctx.font = "95px Raleway";
 	ctx.fillStyle = 'RGBA(255, 181, 107, 1.00)';
 	ctx.textAlign = "right";
 	var hours = d.getHours();

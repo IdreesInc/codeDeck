@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>_codeDeck</title>
 	<link href="card.css" rel="stylesheet">
-	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+	 crossorigin="anonymous"></script>
 	<style>
 		body {
 			width: 3000px;
@@ -11,7 +14,7 @@
 		}
 
 		.card {
-			box-shadow: 0px 50px 50px rgba(0,0,0,0.35);
+			box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.35);
 		}
 
 		#status {
@@ -33,6 +36,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<div id="backgroundTwo"></div>
 	<div id="backgroundOne"></div>
@@ -60,6 +64,7 @@
 	};
 	var deck = [titleCard, weatherCard, calculatorCard, timeCard];
 	function getGradient(index) {
+		index = Math.min(index, 3);
 		return "linear-gradient(to bottom right, " + deck[index].startColor + ", " + deck[index].endColor + ")";
 	}
 	var marginLeft = 300;
@@ -78,12 +83,12 @@
 	for (var j = 1; j < deck.length; j++) {
 		cardPositions[j] += marginLeft + 320;
 	}
-	$(window).scroll(function() {
+	$(window).scroll(function () {
 		var scroll = $(document).scrollLeft() + $(window).width() / 2;
 		for (var i = deck.length - 1; i >= 0; i--) {
 			var x = endMargin + i * (marginLeft + 320);
 			if (scroll >= x) {
-				if(scroll <= x + 320) {
+				if (scroll <= x + 320) {
 					$("#backgroundOne").css('background', getGradient(i));
 					$("#backgroundOne").css('opacity', 1);
 					$("#backgroundTwo").css('background', getGradient(i + 1));
@@ -101,4 +106,5 @@
 		}
 	});
 </script>
+
 </html>
